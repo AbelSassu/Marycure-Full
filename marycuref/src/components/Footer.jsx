@@ -11,7 +11,7 @@ const Footer = () => {
     const whatsappNumber = "393408666192";
 
     return (
-        <footer className="mt-20 bg-gray-200 text-gray-600">
+        <footer className="bg-gray-200 text-gray-600">
             <div className="max-w-6xl px-5 mx-auto pt-12 pb-7 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
                 {/* Colonna 1 */}
                 <div className="text-center">

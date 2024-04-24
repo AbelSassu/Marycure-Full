@@ -146,7 +146,7 @@ const Prenotazioni = () => {
                     content="In questa pagina puoi tenere sotto controllo i tuoi appuntamenti con Marycure vederne lo storico."
                 />
             </Helmet>
-            <div className="pt-10 px-4 sm:px-8 md:px-16 lg:px-64">
+            <div className="pt-10 px-4 sm:px-8 md:px-16 lg:px-64 mb-24">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
                     I tuoi appuntamenti
                 </h2>

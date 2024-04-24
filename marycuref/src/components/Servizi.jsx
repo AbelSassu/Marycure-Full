@@ -136,7 +136,7 @@ const Servizi = () => {
                     alle tue esigenze
                 </h4>
             </div>
-            <div className="container mx-auto p-4">
+            <div className="container mx-auto p-4 mb-16">
                 <div className="flex justify-center mt-4">
                     <button
                         onClick={() => setFiltro("Mani")}

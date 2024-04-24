@@ -115,7 +115,7 @@ const ChiSiamo = () => {
                     </div>
                 </section>
 
-                <section className="text-center mt-10 py-6 px-8 sm:px-10 md:px-12 lg:px-24 xl:px-48">
+                <section className="text-center mt-10 mb-24 py-6 px-8 sm:px-10 md:px-12 lg:px-24 xl:px-48">
                     <h3 className="text-2xl font-bold mb-6">
                         Le nostre qualità a 4-P{" "}
                     </h3>

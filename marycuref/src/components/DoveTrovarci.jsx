@@ -91,7 +91,7 @@ const DoveTrovarci = () => {
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.9802583359115!2d8.996661790178814!3d40.58619117160833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dc3d381ccb4c83%3A0xf8788333ae1961c9!2sVia%20Umberto%20I%2C%2062%2C%2007014%20Ozieri%20SS!5e0!3m2!1sit!2sit!4v1712157697431!5m2!1sit!2sit"
                             width="100%"
                             height="300px"
-                            className="mt-5 rounded-lg shadow-lg border-2 border-oro"
+                            className="mt-5 mb-20 rounded-lg shadow-lg border-2 border-oro"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"

@@ -112,7 +112,7 @@ const getImageClassName = (index) => {
                     </h4>
                 </div>
 
-                <div className="gallery-container">
+                <div className="gallery-container mb-24">
                     {photos.map((photo, index) => (
                         <div
                             key={index}

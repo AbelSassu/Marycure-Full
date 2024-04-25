@@ -1,5 +1,6 @@
-import videoMary from "../assets/video/videomary.mp4";
-import videoSampleDesktop from "../assets/video/videomary2.mp4";
+
+import videoMary from "../../assets/video/videomary.mp4";
+import videoSampleDesktop from "../../assets/video/videomary2.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 

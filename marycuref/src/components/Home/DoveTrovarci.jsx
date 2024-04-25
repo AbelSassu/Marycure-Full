@@ -1,5 +1,6 @@
-import Entratasu from "../assets/img/Entratasu.png";
-import Entratagiu from "../assets/img/Entratagiu.png";
+
+import Entratasu from "../../assets/img/Entratasu.png";
+import Entratagiu from "../../assets/img/Entratagiu.png";
 import { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Lightbox from "yet-another-react-lightbox";

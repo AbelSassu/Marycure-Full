@@ -1,12 +1,12 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Marito from "./Marito";
-import Servizi from "./Servizi";
-import Galleria from "./Galleria";
-import Prenotazioni from "./Prenotazioni";
-import Appuntamenti from "./Appuntamenti";
-import DoveTrovarci from "./DoveTrovarci";
-import ChiSiamo from "./ChiSiamo";
+import Servizi from "./Servizi/Servizi";
+import Galleria from "./Home/Galleria";
+import Prenotazioni from "./Prenotazioni/Prenotazioni";
+import Appuntamenti from "./Appuntamenti/Appuntamenti";
+import DoveTrovarci from "./Home/DoveTrovarci";
+import ChiSiamo from "./Home/ChiSiamo";
 
 const Main = () => {
     const location = useLocation();

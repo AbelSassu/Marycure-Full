@@ -4,10 +4,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import DettagliModale from "./DettagliModale";
-import mani1 from "../assets/servizi/uno.jpg"
-import mani3 from "../assets/servizi/tre.jpg";
-import piedi1 from "../assets/servizi/unop.jpg";
-import piedi3 from "../assets/servizi/trep.jpg";
+import mani1 from "../../assets/servizi/uno.jpg";
+import mani3 from "../../assets/servizi/tre.jpg";
+import piedi1 from "../../assets/servizi/unop.jpg";
+import piedi3 from "../../assets/servizi/trep.jpg";
 
 const formatDurata = (timeSpan) => {
     const parts = timeSpan.split(":");

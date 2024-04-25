@@ -1,8 +1,8 @@
 import Hero from "./Hero";
-import smalti from "../assets/img/smalti3.jpg";
-import gufociao from "../assets/img/gufociao.png";
-import duo from "../assets/img/duo.jpg";
-import salone from "../assets/img/salone.jpg";
+import smalti from "../../assets/img/smalti3.jpg";
+import gufociao from "../../assets/img/gufociao.png";
+import duo from "../../assets/img/duo.jpg";
+import salone from "../../assets/img/salone.jpg";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

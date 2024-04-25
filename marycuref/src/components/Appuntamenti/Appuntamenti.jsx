@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { useUser, useSession } from "@clerk/clerk-react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import { ServiziContext } from "./ServiziContext";
+import { ServiziContext } from "../Servizi/ServiziContext";
 import Calendario from "./Calendario";
 import OrariDisponibili from "./OrariDisponibili";
 import NessunServizio from "./NessunServizio";

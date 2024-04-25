@@ -1,5 +1,6 @@
-import img1 from "../assets/img/maria.jpg";
-import img2 from "../assets/img/ele.jpg";
+
+import img1 from "../../assets/img/maria.jpg";
+import img2 from "../../assets/img/ele.jpg";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Main from "./components/Main"; 
 import { UserProvider } from "./components/UserContext";
-import { ServiziProvider } from "./components/ServiziContext";
+import { ServiziProvider } from "./components/Servizi/ServiziContext";
 
 function App() {
     return (

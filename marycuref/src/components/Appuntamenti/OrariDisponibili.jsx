@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import gufo from "../assets/img/gufoscritta2.png"
+import gufo from "../../assets/img/gufoscritta2.png";
 const OrariDisponibili = ({
     orari,
     onOrarioClick,

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useUserContext } from "./UserContext";
+import { useUserContext } from "../UserContext";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useSession } from "@clerk/clerk-react";
 import ModaleCancella from "./ModaleCancella";
 import SessionCard from "./SessionCard";
-import gufetto from "../assets/img/gufoback.png";
+import gufetto from "../../assets/img/gufoback.png";
 
 const Prenotazioni = () => {
     const { userDetails } = useUserContext();
     const { session } = useSession();
+    // eslint-disable-next-line no-unused-vars
     const [sessioni, setSessioni] = useState([]);
     const [nextSession, setNextSession] = useState(null);
     const [futureSessions, setFutureSessions] = useState([]);

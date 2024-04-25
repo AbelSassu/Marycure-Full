@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
-import gufetto from "../assets/img/gufoback.png";
+import gufetto from "../../assets/img/gufoback.png";
 const NessunServizio = () => {
     const navigate = useNavigate();
 

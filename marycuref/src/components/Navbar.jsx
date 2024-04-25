@@ -3,6 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import logo from "../assets/img/logo-trans.png";
 import Login from "./Login";
+import { motion } from "framer-motion";
+
+const dropdownVariants = {
+    open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: "spring", stiffness: 300, damping: 10 },
+    },
+
+    closed: { opacity: 0, y: -20, transition: { duration: 0.2 } },
+};
 
 const Navbar = () => {
     const { isSignedIn } = useUser();
@@ -10,8 +21,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const dropdownRef = useRef(null); // Ref per il controllo del click al di fuori
+    const dropdownRef = useRef(null);
 
     // Gestione dello scroll per la trasparenza della navbar
     useEffect(() => {
@@ -28,21 +38,32 @@ const Navbar = () => {
     }, []);
 
     // Gestione del click al di fuori del dropdown per chiuderlo
-useEffect(() => {
-    const handleClickOutside = (event) => {
-        if (
-            dropdownRef.current &&
-            !dropdownRef.current.contains(event.target) &&
-            event.target.id !== "dropdownButton" // Ignora il click se è sul bottone
-        ) {
-            setIsDropdownOpen(false);
-        }
-    };
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target) &&
+                event.target.id !== "dropdownButton"
+            ) {
+                closeDropdown();
+            }
+        };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-}, []);
+        document.addEventListener("click", handleClickOutside);
+        return () => document.removeEventListener("click", handleClickOutside);
+    }, []);
 
+const toggleDropdown = (event) => {
+    event.preventDefault(); // Impedisce il comportamento di default dell'evento
+    event.stopPropagation(); // Impedisce la propagazione dell'evento
+
+    setIsDropdownOpen(!isDropdownOpen);
+};
+
+
+const closeDropdown = () => {
+    setIsDropdownOpen(false);
+};
 
     return (
         <nav
@@ -131,11 +152,9 @@ useEffect(() => {
 
                     <div className="relative" ref={dropdownRef}>
                         <button
-                            id="dropdownButton" 
+                            id="dropdownButton"
                             className="flex items-center justify-between px-3 py-2 w-full text-left bg-transparent border-none text-oro"
-                            onClick={() =>
-                                setIsDropdownOpen((current) => !current)
-                            }
+                            onClick={toggleDropdown}
                         >
                             Marycure
                             <svg
@@ -152,7 +171,12 @@ useEffect(() => {
                             </svg>
                         </button>
                         {isDropdownOpen && (
-                            <ul className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-verde">
+                            <motion.ul
+                                className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-verde"
+                                variants={dropdownVariants}
+                                initial="closed"
+                                animate={isDropdownOpen ? "open" : "closed"}
+                            >
                                 <li className="border border-oro border-b-0 rounded-t">
                                     <Link
                                         to="/Galleria"
@@ -177,7 +201,7 @@ useEffect(() => {
                                         Dove trovarci
                                     </Link>
                                 </li>
-                            </ul>
+                            </motion.ul>
                         )}
                     </div>
                 </ul>
@@ -195,7 +219,12 @@ useEffect(() => {
                 } absolute top-full left-0 z-50 flex-col w-full shadow-dark-mild bg-verde lg:hidden`}
                 id="navbarSupportedContent1"
             >
-                <ul className="flex flex-col">
+                <motion.ul
+                    className="flex flex-col"
+                    variants={dropdownVariants}
+                    initial="closed"
+                    animate={isMenuOpen ? "open" : "closed"}
+                >
                     <li className="nav-item">
                         <Link
                             to="/Home"
@@ -243,11 +272,20 @@ useEffect(() => {
                             </svg>
                         </button>
                         {isDropdownOpen && (
-                            <ul className="absolute right-0 z-50 w-full origin-top-right rounded-md bg-verde shadow-lg">
+                            <motion.ul
+                                className="absolute right-0 z-50 w-full origin-top-right rounded-md bg-verde shadow-lg"
+                                variants={dropdownVariants}
+                                initial="closed"
+                                animate={isDropdownOpen ? "open" : "closed"}
+                            >
                                 <li className="border border-oro border-b-0 rounded-t">
                                     <Link
                                         to="/Galleria"
-                                        className="block px-4 py-2  text-oro"
+                                        className="block px-4 py-2 text-oro"
+                                        onClick={(event) => {
+                                            event.stopPropagation(); // Aggiungi qui
+                                            closeDropdown();
+                                        }}
                                     >
                                         Galleria lavori
                                     </Link>
@@ -256,6 +294,10 @@ useEffect(() => {
                                     <Link
                                         to="/ChiSiamo"
                                         className="block px-4 py-2 text-oro"
+                                        onClick={(event) => {
+                                            event.stopPropagation(); // Aggiungi qui
+                                            closeDropdown();
+                                        }}
                                     >
                                         Chi siamo
                                     </Link>
@@ -264,14 +306,18 @@ useEffect(() => {
                                     <Link
                                         to="/DoveTrovarci"
                                         className="block px-4 py-2 text-oro"
+                                        onClick={(event) => {
+                                            event.stopPropagation(); // Aggiungi qui
+                                            closeDropdown();
+                                        }}
                                     >
                                         Dove trovarci
                                     </Link>
                                 </li>
-                            </ul>
+                            </motion.ul>
                         )}
                     </div>
-                </ul>
+                </motion.ul>
             </div>
         </nav>
     );

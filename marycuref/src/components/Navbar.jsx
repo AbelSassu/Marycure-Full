@@ -33,14 +33,14 @@ useEffect(() => {
         if (
             dropdownRef.current &&
             !dropdownRef.current.contains(event.target) &&
-            !event.target.closest("a")
+            event.target.id !== "dropdownButton" // Ignora il click se è sul bottone
         ) {
             setIsDropdownOpen(false);
         }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
 }, []);
 
 
@@ -73,7 +73,7 @@ useEffect(() => {
                         <div className="mr-5">
                             <Login />
                         </div>
-    
+
                         {/* Pulsante Hamburger */}
                         <button
                             className="block border-0 bg-transparent"
@@ -131,8 +131,11 @@ useEffect(() => {
 
                     <div className="relative" ref={dropdownRef}>
                         <button
+                            id="dropdownButton" 
                             className="flex items-center justify-between px-3 py-2 w-full text-left bg-transparent border-none text-oro"
-                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                            onClick={() =>
+                                setIsDropdownOpen((current) => !current)
+                            }
                         >
                             Marycure
                             <svg
